@@ -10,6 +10,10 @@ router.get("/", (request, response) => {
   return response.send("Olá, Luana!");
 });
 
-router.post("/cities", CitiesController.create);
+router.post(
+  "/cities",
+  CitiesController.createMiddlewareBodyValidator,
+  CitiesController.create
+);
 
 export { router };
