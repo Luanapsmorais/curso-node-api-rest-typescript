@@ -1,11 +1,13 @@
 import express from "express";
 
+import "dotenv/config";
+
+import { router } from "./routes";
+
 const server = express();
 
-//iniciando rotas:
+server.use(express.json());
 
-server.get("/", (request, response) => {
-  return response.send("Olá, Luana!");
-});
+server.use(router);
 
 export { server };
