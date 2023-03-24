@@ -1,4 +1,3 @@
-// Router é um middleware, onde escifico todas as rotas
 import { Router } from "express";
 import { StatusCodes } from "http-status-codes";
 
@@ -7,12 +6,12 @@ import { CitiesController } from "../controllers";
 const router = Router();
 
 router.get("/", (request, response) => {
-  return response.send("Olá, Luana!");
+  return response.send("Hello, Luana!");
 });
 
 router.post(
   "/cities",
-  CitiesController.createMiddlewareBodyValidator,
+  CitiesController.createValidation,
   CitiesController.create
 );
 
