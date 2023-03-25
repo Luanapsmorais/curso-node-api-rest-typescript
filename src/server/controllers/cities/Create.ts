@@ -22,7 +22,7 @@ export const create = async (
 ) => {
   console.log(request.body);
 
-  return response
-    .status(StatusCodes.INTERNAL_SERVER_ERROR)
-    .send("City controller is not ready yet!");
+  const { name } = request.body;
+
+  return response.status(StatusCodes.CREATED).json(name);
 };
